@@ -28,7 +28,7 @@ seg_code_list = [
 seg_pos_list = [
     0xFE, # 1st
     0xFD, # 2nd
-    0xDB, # 3rd
+    0xFB, # 3rd
     0xF7, # 4th  
 ]
 
