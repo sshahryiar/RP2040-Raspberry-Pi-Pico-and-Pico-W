@@ -5,6 +5,11 @@ from rp2 import PIO, asm_pio, StateMachine
 
 @asm_pio(set_init = PIO.OUT_LOW, sideset_init = PIO.OUT_HIGH)
 def police_lights():
+    """
+    Total no. of cycles = (1 + 1 + (29 + 1) * (6 + 1) + 1) * 2 = 426 cycles
+    Flash frequency = 2000 / 426 = 4.69Hz
+    """
+
     wrap_target()
     
     set(pins, 0) .side(1)

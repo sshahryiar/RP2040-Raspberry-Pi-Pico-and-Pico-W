@@ -23,9 +23,9 @@ def rotary_encoder():
 def irq_callback(sm):
     global count, direction
     
-    if (sm.irq().flags() > 0):
+    if (sm.irq().flags() > 0):  # check if there is an interrupt flag
         
-        direction = sm.get()
+        direction = sm.get()    # get input states
         
         LED.toggle()
         

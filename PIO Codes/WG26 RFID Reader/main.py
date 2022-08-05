@@ -10,7 +10,7 @@ raw_card_data = 0
 
 @asm_pio()
 def D0_out():
-    irq(clear, 0)
+    irq(clear, 0)    # clear irq 0
     wrap_target()
     wait(0, pin, 0)  # wait for logic 0 on pin index 0
     irq(block, 0)    # set IRQ index 0 and wait for IRQ ack
@@ -20,7 +20,7 @@ def D0_out():
 
 @asm_pio()
 def D1_out():
-    irq(clear, 1)
+    irq(clear, 1)    # clear irq 1
     wait(0, pin, 0)  # wait for logic 0 on pin index 0
     wrap_target()
     wait(1, pin, 0)  # wait for logic 1 on pin index 0
