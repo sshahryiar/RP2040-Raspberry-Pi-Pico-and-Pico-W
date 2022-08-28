@@ -25,22 +25,6 @@ def contrain(value, min_value, max_value):
     
     else:
         return value
-
-
-def write_text(text, x, y, size, color):
-        background = tft.pixel(x, y)
-        info = []
-        
-        tft.text(text, x, y, color)
-        for i in range(x, x + (8 * len(text))):
-            for j in range(y, y + 8):
-                px_color = tft.pixel(i, j)
-                info.append((i, j, px_color)) if px_color == color else None
-        
-        tft.text(text, x, y, background)
-       
-        for px_info in info:
-            tft.fill_rect(size*px_info[0] - (size-1)*x , size*px_info[1] - (size-1)*y, size, size, px_info[2])
             
             
 def draw_and_write(value, pos, colour):
