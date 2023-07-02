@@ -1,5 +1,4 @@
 from micropython import const
-from machine import Pin, SPI
 from utime import sleep_ms
 import framebuf  
 
