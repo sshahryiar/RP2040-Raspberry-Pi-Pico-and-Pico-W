@@ -176,7 +176,7 @@ class wifi():
         raw = raw + path
         raw = raw + " HTTP/" + http_ver + "\r\n"
         raw = raw + "Host: " + url + "\r\n"
-        raw = raw + header + "\r\n"
+        raw = raw + header
         raw = raw + content_info + str(content_length) + "\r\n"
         raw = raw + "\r\n" + content + "\r\n\r\n"
         str_length = len(raw)
