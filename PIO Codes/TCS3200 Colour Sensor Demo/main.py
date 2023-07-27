@@ -16,7 +16,7 @@ def map_value(v, x_min, x_max, y_min, y_max):
     return int(y_min + (((y_max - y_min)/(x_max - x_min)) * (v - x_min)))
 
 
-def contrain(value, min_value, max_value):
+def constrain(value, min_value, max_value):
     if(value > max_value):
         return max_value
     
@@ -29,7 +29,7 @@ def contrain(value, min_value, max_value):
             
 def draw_and_write(value, pos, colour):
     bar = map_value(value, 0, 100,  0, 219)
-    bar = contrain(bar, 0, 219)
+    bar = constrain(bar, 0, 219)
     
     tft.text(str("%3u" %value), 110, (pos + 20), colour)
     
