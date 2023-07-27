@@ -16,7 +16,7 @@ def map_value(v, x_min, x_max, y_min, y_max):
     return int(y_min + (((y_max - y_min)/(x_max - x_min)) * (v - x_min)))
 
 
-def contrain(value, min_value, max_value):
+def constrain(value, min_value, max_value):
     if(value > max_value):
         return max_value
     
@@ -47,9 +47,9 @@ def write_text(text, x, y, size, color):
 while(True):
     
     distance = sonar.get_reading_in_cm()
-    distance = contrain(distance, 0, 500)
+    distance = constrain(distance, 0, 500)
     bar = map_value(distance, 0, 500,  0, 219)
-    bar = contrain(bar, 0, 219)
+    bar = constrain(bar, 0, 219)
     tft.fill(tft.BLACK)
     
     write_text("HC-SR04 PIO", 25, 4, 2, tft.WHITE)
