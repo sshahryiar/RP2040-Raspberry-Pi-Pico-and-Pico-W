@@ -42,7 +42,7 @@ class touch():
         return int(y_min + (((y_max - y_min) / (x_max - x_min)) * (v - x_min)))
 
 
-    def contrain(self, value, min_value, max_value):
+    def constrain(self, value, min_value, max_value):
         if(value > max_value):
             return max_value
         
@@ -83,8 +83,8 @@ class touch():
         x_value = self.map_value(x_val, self.x_axis_min, self.x_axis_max, 0, XPT2046_l_max) 
         y_value = self.map_value(y_val, self.y_axis_min, self.y_axis_max, 0, XPT2046_w_max)
         
-        x_val = self.contrain(x_value, 0, XPT2046_l_max) 
-        y_val = self.contrain(y_value, 0, XPT2046_w_max)
+        x_val = self.constrain(x_value, 0, XPT2046_l_max) 
+        y_val = self.constrain(y_value, 0, XPT2046_w_max)
         
         return x_val, y_val
     
