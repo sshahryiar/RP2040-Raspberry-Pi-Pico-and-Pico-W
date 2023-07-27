@@ -41,7 +41,7 @@ def map_value(v, x_min, x_max, y_min, y_max):
     return (y_min + (((y_max - y_min)/(x_max - x_min)) * (v - x_min)))
 
 
-def contrain(value, min_value, max_value):
+def constrain(value, min_value, max_value):
     if(value > max_value):
         return max_value
     
@@ -88,13 +88,13 @@ def draw_background_graphics():
     
 
 def draw_dial(x_pos, y_pos, value, value_min, value_max, colour):
-    temp = contrain(value, value_min, value_max)
+    temp = constrain(value, value_min, value_max)
     line = map_value(temp, value_min, value_max, -2.618, 2.618)    
     tft.line(x_pos, y_pos, (x_pos + int(30 * math.sin(line))), int(y_pos - (30 * math.cos(line))), colour)
     
     
 def draw_pointer(value, value_min, value_max):
-    temp = contrain(value, value_min, value_max)
+    temp = constrain(value, value_min, value_max)
     temp = int(map_value(temp, value_min, value_max, 10, 310))
     tft.line(temp, 194, (temp - 4), 190, tft.WHITE)
     tft.line(temp, 194, (temp + 4), 190, tft.WHITE)
